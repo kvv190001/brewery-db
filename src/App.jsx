@@ -45,7 +45,7 @@ function App() {
         onChange={(inputString) => searchItems(inputString.target.value)}
       />
       <ul>
-        <li className= "main-list">
+        <li className="main-list">
           <p>Name</p>
           <p>Type</p>
           <p>Street</p>
@@ -57,19 +57,23 @@ function App() {
         {searchInput.length > 0
           ? filteredResults
             .map((breweryData) => {
-              return (
-                <BreweryInfo
-                  key={breweryData.id}
-                  id={breweryData.id}
-                  type={breweryData.brewery_type}
-                  name={breweryData.name}
-                  address={breweryData.address_1}
-                  city={breweryData.city}
-                  website={breweryData.website_url}
-                />
-              )
+              if (breweryData.website_url != null) {
+                return (
+                  <BreweryInfo
+                    key={breweryData.id}
+                    id={breweryData.id}
+                    type={breweryData.brewery_type}
+                    name={breweryData.name}
+                    address={breweryData.address_1}
+                    city={breweryData.city}
+                    website={breweryData.website_url}
+                  />
+                )
+              }
+              return null
             })
-          : list?.map((breweryData) => (
+          : list?.filter(breweryData => breweryData.website_url != null)
+          .map((breweryData) => (
             <BreweryInfo
               key={breweryData.id}
               id={breweryData.id}
