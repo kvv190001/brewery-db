@@ -79,7 +79,7 @@ body {
     justify-content: flex-start;
     width: 100%;
     min-height: 100vh;
-    padding: 50px 20px;
+    padding: 70px 20px;
     color: #fff;
     background: #000;
     text-align: center;
@@ -212,4 +212,110 @@ h1 {
 div>input,
 div>select {
     margin-bottom: 20px;
+}
+
+.brewery-detail-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  background: #000;
+  padding: 80px 20px;
+  color: #fff;
+}
+
+.brewery-detail-card {
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 14px;
+  padding: 40px;
+  max-width: 650px;
+  width: 100%;
+  box-shadow: 0 0 15px rgba(100, 108, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.brewery-detail-card:hover {
+  box-shadow: 0 0 25px rgba(100, 108, 255, 0.3);
+}
+
+.back-button {
+  background: #1a1a1a;
+  color: #fff;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  margin-bottom: 20px;
+}
+
+.back-button:hover {
+  border-color: #646cff;
+  color: #646cff;
+}
+
+.brewery-detail-name {
+  font-size: 2.2rem;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.brewery-detail-type {
+  color: #888;
+  font-size: 1rem;
+  font-style: italic;
+  margin-bottom: 30px;
+}
+
+.brewery-detail-info {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.info-section h3 {
+  margin: 0;
+  color: #aaa;
+  font-size: 1.1rem;
+}
+
+.info-section p {
+  margin: 6px 0 0;
+  color: #ddd;
+  font-size: 1rem;
+}
+
+.brewery-detail-link {
+  color: #646cff;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.brewery-detail-link:hover {
+  color: #8c91ff;
+  text-decoration: underline;
+}
+
+.brewery-loading {
+  color: #aaa;
+  text-align: center;
+  margin-top: 100px;
+  font-size: 1.2rem;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  background: #1d1f1d;
+  margin: 20px 30px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  display: flex;
+  gap: 18px;
+  align-items: center;
 }

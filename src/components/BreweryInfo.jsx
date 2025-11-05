@@ -1,17 +1,27 @@
-const BreweryInfo = ({ id, type, name, address, city, website }) => {
-    return (
-        <li className="main-list" key={id}>
-            <p>{name}</p>
-            <p>{type}</p>
-            <p>{address}</p>
-            <p>{city}</p>
-            <p>
-                <a href={website} target="_blank" rel="noopener noreferrer">
-                    {website.replace(/^https?:\/\//, "")}
-                </a>
-            </p>
-        </li>
-    )
-}
+import { Link } from "react-router";
 
-export default BreweryInfo
+const BreweryInfo = ({ id, type, name, address, city, website }) => {
+  return (
+    <li className="main-list" key={id}>
+      <p>
+        <Link
+          to={`/breweryDetails/${id}`}
+          style={{
+            color: "#646cff",
+            textDecoration: "none",
+          }}
+          onMouseOver={(e) => (e.target.style.textDecoration = "underline")}
+          onMouseOut={(e) => (e.target.style.textDecoration = "none")}
+        >
+          {name}
+        </Link>
+      </p>
+      <p>{type}</p>
+      <p>{address}</p>
+      <p>{city}</p>
+      <p>{website}</p>
+    </li>
+  );
+};
+
+export default BreweryInfo;
